@@ -10,8 +10,19 @@
     <header>
         <h1>Welcome to PFMS</h1>
         <p>Manage your finances with ease.</p>
+        
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul>
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        
         <a href="/login">Get Started</a>
     </header>
 </body>
 </html>
- 
